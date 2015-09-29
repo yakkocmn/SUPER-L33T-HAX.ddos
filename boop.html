@@ -5,6 +5,7 @@
 body {background-image: url("matrix.gif");}
 h1{color:white;}
 h2{color:white;}
+
 marquee{
 		position: absolute;
 		top: 40;
@@ -13,9 +14,62 @@ marquee{
 		font-size: 20px;
 		text-shadow: color:black;
 	}
+
+	#boop {
+		position: absolute;
+		font-family: "Comic Sans MS";
+		font-size: 20px;
+		text-shadow: color:black;
+
+		-webkit-animation-name: changecolor;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-iteration-count: infinite;
+	}
+
+	#boop2 {
+		position: absolute;
+		font-family: "Comic Sans MS";
+		font-size: 20px;
+		text-shadow: color:black;
+
+		-webkit-animation-name: changecolor;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-iteration-count: infinite;
+	}
+
+	@-webkit-keyframes changecolor{
+	0% {color:#FF73F6;}
+	25% {color:#FFC273;}
+	50% {color:#73FF7C;}
+	75% {color:#73B0FF;}
+	100% {color:#FF73F6;}
+	}
+
 </style>
 
+<<<<<<< HEAD
 <title>Boop</title>
+=======
+<script>
+window.onload = function()
+{
+	var follow = document.getElementById("boop");
+	var follow2 = document.getElementById("boop2");
+	var x, y;
+
+	window.addEventListener('mousemove', function(event){
+		x = event.clientX;
+		y = event.clientY;
+		if( typeof x !== 'undefined'){
+			follow.style.left = x + "px";
+			follow.style.top = y + "px";
+			follow2.style.left = x + 25 + "px";
+			follow2.style.top = y + 25 + "px";
+		}
+	}, false);
+}
+</script>
+>>>>>>> 03b580608fbc539a4153f8fe765473d2d9547e79
 
 </head>
 
@@ -23,6 +77,9 @@ marquee{
   <h1> boop </h1>
 
   <h2> commit 1: revenge of the boop </h2>
+
+	<h3 id="boop"> boop </h3>
+	<h3 id="boop2"> boop </h3>
 
   <marquee behavior: "scroll" direction = "right">
     commit 2: scrolling boop boop boop boop boop boop
